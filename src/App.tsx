@@ -4,11 +4,16 @@ import logo from './logo.svg';
 import './App.css';
 import EmailsBox from './components/emails-box';
 import SideBarMenu from './components/side-bar-menu';
+import ImapConnector from './features/email/imap/imap-connector';
 
 
 function App() {
 
   const htmlInlineStylesConvertor = new HtmlInlineStylesConvertor();
+
+  const imapConnector = new ImapConnector();
+  //imapConnector.generateConnectionForTest();
+
 
 
   return (
