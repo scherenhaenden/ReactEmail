@@ -23,8 +23,7 @@ namespace EmailAppBakcEnd.Controllers
         [Route("logmein")]
 
         public object GetArticleByUrl (dynamic requestArticleModel)
-        {            
-            
+        {        
             return "";
         }
         
