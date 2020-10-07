@@ -82,16 +82,5 @@ export class ImapConnector{
    
 }
 
-/*
-class UserConfigurationModel{
 
-    public user = 'edward_sergio_flores@hotmail.com';
-    public password = 'Calcuta45$%';
-    public host = 'Outlook.office365.com';
-    public port = 993;
-    public tls = true;
-    public authTimeout = 3000;
-
-}
-*/
 export default ImapConnector;
