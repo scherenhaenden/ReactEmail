@@ -1,8 +1,17 @@
+
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 
-.App-logo {
+
+
+.panel-row-no-header {  
+  min-height: 100vh;
+}
+
+
+/*.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +44,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/
