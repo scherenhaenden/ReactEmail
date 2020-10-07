@@ -29,3 +29,6 @@ EmailAppBakcEnd/**bin/
 EmailAppBakcEnd/**obj/
 EmailAppBakcEnd/**/**/bin/
 EmailAppBakcEnd/**/**/obj/
+EmailAppBakcEnd/.idea/
+EmailAppBakcEnd/*imap.log
+*/.idea/
