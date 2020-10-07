@@ -23,11 +23,9 @@ namespace EmailAppBakcEnd.Controllers
         [Route("logmein")]
 
         public object GetArticleByUrl (dynamic requestArticleModel)
-        {
-            new DraftClass().LoginMaill("edward_sergio_flores@hotmail.com", "Calcuta45$%", "Outlook.office365.com", 993);
+        {            
+            
             return "";
-
-
         }
         
   
