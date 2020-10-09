@@ -1,9 +1,11 @@
 namespace DataApi.Core.Domain
 {
-    public class User
+    public class User: TEntity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string LoginName { get; set; }
+        public string InternalPassword { get; set; }
     }
 
    
