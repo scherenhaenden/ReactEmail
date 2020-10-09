@@ -13,9 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="blogging.db">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+      <Folder Include="Migrations" />
     </ItemGroup>
 
 </Project>
