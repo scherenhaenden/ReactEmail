@@ -18,6 +18,21 @@ namespace EmailAppBakcEnd.Controllers
         }
         
         
+        
+        // First method. 
+        // get if anyone is registered in the app yet
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("init")]
+
+        public object init ()
+        {        
+            return "";
+        }
+
+        
+        
+        
         [AllowAnonymous]
         [HttpPost]
         [Route("logmein")]
