@@ -2,7 +2,7 @@
 
 
 ## how to start it
-Coming
+npm start (Only front End)
 
 
 ## how to build it
