@@ -5,6 +5,7 @@ interface IYoProps {
     inputName: string;    
     input: string;
     handler: any;
+    type: string;
   }
 
   interface IState {    
@@ -23,13 +24,10 @@ class InputBoxPlaceholder extends React.Component<IYoProps, IState> {
         
     }
     
-    public getInputElement(inputName: string): JSX.Element {
-
-        
-
+    public getInputElement(inputName: string): JSX.Element {  
         return (
             <div className="form-label-group">
-            <input type="email" id="inputEmail" className="form-control" placeholder="Email address"/* requiredTxt="" autofocus=""*//>            
+            <input  id="inputEmail" className="form-control" placeholder="Email address"/* requiredTxt="" autofocus=""*//>            
           </div>
         )
     }
@@ -47,7 +45,7 @@ class InputBoxPlaceholder extends React.Component<IYoProps, IState> {
     render(): JSX.Element {
         return (
             <div className="form-label-group">
-            <input type="email" id="inputEmail" className="form-control" placeholder={this.props2.inputName}/* requiredTxt="" autofocus=""*/ value={this.state.input}
+            <input id="inputEmail" className="form-control" placeholder={this.props2.inputName} type={this.props2.type}/* requiredTxt="" autofocus=""*/ value={this.state.input}
             
             onChange={(e) => {this.onTodoChange( e.target.value)}}
             />            
