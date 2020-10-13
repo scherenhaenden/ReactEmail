@@ -1,13 +1,12 @@
-export const RequestGetWithoutBody =  < T extends {} >(url: string):  Promise<T> => {
+/*export const RequestGetWithoutBody =  < T extends {} >(url: string):  Promise<T> => {
 
     const requestOptions = {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        /*body: JSON.stringify({ title: 'React POST Request Example' })*/
+        /*body: JSON.stringify({ title: 'React POST Request Example' })* /
     };
     return responseFetcher(url, requestOptions);
 }
-
 
 export default RequestGetWithoutBody 
 
@@ -15,7 +14,9 @@ const responseFetcher = < T extends {} >(url: string, requestOptions: any): Prom
 
     return fetch(url, requestOptions)
            .then(response => response.json())  as Promise<T>;
-}
+}*/
+
+
 
 export class GenericServices {
 
