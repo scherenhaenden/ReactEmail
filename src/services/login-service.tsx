@@ -1,23 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import RequestGetWithoutBody, { GenericServices } from "./generic-services";
+import { GenericServices } from "./generic-services";
 
 
 export class LoginService {
 
-    private genericServices = new GenericServices();    
-    
+    private genericServices = new GenericServices();       
 
-    public async getInitialData(): Promise<void> {
+    public async getInitialData(): Promise<any> {        
 
-
-        const h= RequestGetWithoutBody(`http://localhost:5000/apipublic/Emails/init`);
-
-        console.log('hd', h);
-
-        let data = await this.genericServices.requestGetWithoutBody(`http://localhost:5000/apipublic/Emails/init`);
-
-        console.log('data', data);
+        return this.genericServices.requestGetWithoutBody(`http://localhost:5000/apipublic/Emails/init`);        
     }
 
 }
