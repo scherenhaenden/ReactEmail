@@ -1,7 +1,5 @@
 export class GenericServices {
 
-
-
     public requestPost<T>(url: string, body : object ): Promise<T>{
 
         const requestOptions = {
