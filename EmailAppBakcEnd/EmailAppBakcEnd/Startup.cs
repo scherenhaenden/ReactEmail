@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataApi.Core.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -18,7 +20,6 @@ namespace EmailAppBakcEnd
             services.AddCors();
             services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);;
             services.AddHttpClient();
-          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +53,9 @@ namespace EmailAppBakcEnd
                 //endpoints.MapFallbackToPage("/Testme");
                 //if I use a route names testme
             });
+            
+            var db = new EmailAppContext();
+            db.Database.Migrate();
         }
     }
 }
