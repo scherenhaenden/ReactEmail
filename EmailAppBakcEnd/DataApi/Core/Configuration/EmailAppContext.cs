@@ -9,13 +9,20 @@ namespace DataApi.Core.Configuration
     public class EmailAppContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<EmailHostConfiguration> EmailHostConfiguration { get; set; }
+        public DbSet<Email> Email { get; set; }
+        public DbSet<EmailProtocolType> EmailProtocolType { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             var h = GetAExePath();
              
             options.UseSqlite($"Data Source={h}/EmailAppC.db");
+            
         }
+        
+        
         
         public string GetAExePath()
         {
