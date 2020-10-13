@@ -18,11 +18,8 @@ namespace DataApi.Core.Configuration
         {
             var h = GetAExePath();
              
-            options.UseSqlite($"Data Source={h}/EmailAppC.db");
-            
-        }
-        
-        
+            options.UseSqlite($"Data Source={h}/EmailAppC.db");            
+        }               
         
         public string GetAExePath()
         {
