@@ -40,9 +40,7 @@ class Register extends React.Component<IYoProps, IState> {
 
     const registerService = new RegisterService();
 
-    registerService.sendRegistration(this.state.loginName, this.state.firstName, this.state.lastName, this.state.createPass);
-
-    
+    registerService.sendRegistration(this.state.loginName, this.state.firstName, this.state.lastName, this.state.createPass);    
 
     return false;
 
