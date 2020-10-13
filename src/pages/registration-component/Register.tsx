@@ -36,7 +36,7 @@ class Register extends React.Component<IYoProps, IState> {
   }
 
 
-  private sentRegistration(): boolean{
+  private sendRegistration(): boolean{
 
     const registerService = new RegisterService();
 
@@ -119,7 +119,7 @@ class Register extends React.Component<IYoProps, IState> {
     <button className="btn btn-lg btn-primary btn-block" type="button" onClick={(event) => 
         {
           event.stopPropagation();
-          this.sentRegistration()
+          this.sendRegistration()
         }
       }>Sign up</button> 
     <span>DO NOT USE ANY REAL EMAIL ACCOUNT BECAUSE THIS IS AN EXPERIMENTAL APP</span>       
