@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using DataApi.Core.Configuration;
+using ElectronNET.API;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -19,7 +21,8 @@ namespace EmailAppBakcEnd
         {
             services.AddCors();
             services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);;
-            services.AddHttpClient();
+            services.AddHttpClient();            
+            services.AddDbContext<EmailAppContext>(x => x.UseSqlite("Data Source=EmailApp.db;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,10 +55,9 @@ namespace EmailAppBakcEnd
                 //if I use a route names testme
                 //endpoints.MapFallbackToPage("/Testme");
                 //if I use a route names testme
-            });
-            
-            var db = new EmailAppContext();
-            db.Database.Migrate();
+            });           
+      
+            Task.Run(async () => await Electron.WindowManager.CreateWindowAsync());
         }
     }
 }
