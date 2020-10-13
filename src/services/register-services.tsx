@@ -17,4 +17,15 @@ export class RegisterService {
         
     }
 
+
+    public async sendRegistration(user:string, firstName: string, lastName: string, password: string ): Promise<void> {
+
+        var registerUserModel =  {user, firstName, lastName, password};        
+
+        let data = await this.genericServices.requestPost(`http://localhost:5000/apipublic/Emails/register`, registerUserModel);
+
+        console.log('data', data);                        
+        
+    }
+
 }
