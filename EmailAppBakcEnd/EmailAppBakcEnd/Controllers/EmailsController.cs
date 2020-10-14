@@ -1,13 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataApi.Core.Configuration;
-using DataApi.Core.Domain;
 using EmailAppBakcEnd.ApiModels;
-using EmailAppBakcEnd.Features.Mails;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 
 namespace EmailAppBakcEnd.Controllers
@@ -67,7 +63,22 @@ namespace EmailAppBakcEnd.Controllers
             db.Users.Add(user);
             db.SaveChanges();
             return true;            
+        }        
+        
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("login")]
+
+        public object Login (UserLoginModel userLoginModel)
+        {            
+            var db = _emailAppContext;
+            var result = db.Users.SingleOrDefault(x =>
+                x.LoginName == userLoginModel.User && x.InternalPassword == userLoginModel.Password);
+            if (result == null)
+            {
+                return false;
+            }
+            return true;            
         }
-  
     }
 }

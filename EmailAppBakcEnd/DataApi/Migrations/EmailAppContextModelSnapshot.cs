@@ -3,7 +3,6 @@ using System;
 using DataApi.Core.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataApi.Migrations
 {

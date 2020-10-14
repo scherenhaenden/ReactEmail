@@ -1,4 +1,3 @@
-using System.Linq;
 using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Security;
