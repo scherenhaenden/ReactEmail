@@ -12,4 +12,12 @@ export class LoginService {
         return this.genericServices.requestGetWithoutBody(`http://localhost:5000/apipublic/Emails/init`);        
     }
 
+    public async loginIntoApp(User: string, Password: string): Promise<any> {     
+        
+        var UserLoginModel =  {User, Password};
+        console.log('UserLoginModel:', UserLoginModel)
+
+        return this.genericServices.requestPost(`http://localhost:5000/apipublic/Emails/login`, UserLoginModel);        
+    }
+
 }
