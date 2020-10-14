@@ -119,7 +119,7 @@ class Register extends React.Component<IYoProps, IState> {
           event.stopPropagation();
           this.sendRegistration()
         }
-      }>Sign up</button> 
+      }>Sign in</button> 
     <span>DO NOT USE ANY REAL EMAIL ACCOUNT BECAUSE THIS IS AN EXPERIMENTAL APP</span>       
 </div>  
     );
