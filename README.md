@@ -3,11 +3,13 @@
 
 ## how to start it
 npm start (Only front End)
+`npm start` or  `yarn start`
 
 
 ## how to build it
-Coming
+`npm build` or  `yarn build`
+
 
 ## how to use it
-Coming
+Coming soon
 
