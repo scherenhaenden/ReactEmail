@@ -2,6 +2,7 @@
 
 
 ## how to start it
+npm start (Only front End)
 `npm start` or  `yarn start`
 
 
