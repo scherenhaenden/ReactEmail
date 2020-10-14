@@ -16,10 +16,13 @@ namespace EmailAppBakcEnd.Controllers
     [Route("apipublic/[controller]")]
     public class EmailsController : ControllerBase
     {
-        public EmailsController(/*IOptions<AppSettings> appSettings, IJwtManager jwtManager*/)
+        private readonly EmailAppContext _emailAppContext;
+
+        public EmailsController(
+            EmailAppContext emailAppContext
+            )
         {
-           /* _jwtManager = jwtManager;
-            _appSettings = appSettings.Value;*/
+            _emailAppContext = emailAppContext;            
         }
         
         
@@ -33,8 +36,8 @@ namespace EmailAppBakcEnd.Controllers
         public object init ()
         {
             List<RegistredUsers> registredUsers = new List<RegistredUsers>();
-            
-            var db = new EmailAppContext();
+
+            var db = _emailAppContext;
             var usersInDb = db.Users.ToList();
             if (usersInDb.Count > 0)
             {
@@ -43,6 +46,7 @@ namespace EmailAppBakcEnd.Controllers
                 return result;
             }
             return registredUsers;
+           
         }
 
 
@@ -51,9 +55,8 @@ namespace EmailAppBakcEnd.Controllers
         [Route("register")]
 
         public object RegisterUser (RegisterUser requestArticleModel)
-        {
-            var db = new EmailAppContext();
-
+        {            
+            var db = _emailAppContext;
             var user = new DataApi.Core.Domain.User();
             
             user.LoginName = requestArticleModel.User;
@@ -63,7 +66,7 @@ namespace EmailAppBakcEnd.Controllers
 
             db.Users.Add(user);
             db.SaveChanges();
-            return true;
+            return true;            
         }
   
     }

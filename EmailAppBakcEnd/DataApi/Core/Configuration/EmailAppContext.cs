@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
@@ -12,14 +13,22 @@ namespace DataApi.Core.Configuration
         public DbSet<EmailHostConfiguration> EmailHostConfiguration { get; set; }
         public DbSet<Email> Email { get; set; }
         public DbSet<EmailProtocolType> EmailProtocolType { get; set; }
-        
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
+
+        public EmailAppContext (DbContextOptions<EmailAppContext> options) : base(options)
         {
-            var h = GetAExePath();
-             
-            options.UseSqlite($"Data Source={h}/EmailAppC.db");            
-        }               
+            this.Database.Migrate();
+            
+        }
+
+
+        /* protected override void OnConfiguring(DbContextOptionsBuilder options)
+          {
+             /* var h = GetAExePath();
+              Console.WriteLine("executing on");
+              Console.WriteLine(h);
+              options.UseSqlite($"Data Source={h}/EmailAppC.db");     * /       
+          }    */           
         
         public string GetAExePath()
         {
