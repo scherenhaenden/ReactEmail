@@ -12,6 +12,13 @@ using Microsoft.Extensions.Options;
 
 namespace EmailAppBakcEnd.Controllers
 {
+    public class UserLoginModel
+    {
+        public string User { get; set; }
+        public string Password { get; set; }
+    }
+
+
     [ApiController]
     [Route("apipublic/[controller]")]
     public class EmailsController : ControllerBase
@@ -67,7 +74,22 @@ namespace EmailAppBakcEnd.Controllers
             db.Users.Add(user);
             db.SaveChanges();
             return true;            
+        }        
+        
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("login")]
+
+        public object Login (UserLoginModel userLoginModel)
+        {            
+            var db = _emailAppContext;
+            var result = db.Users.SingleOrDefault(x =>
+                x.LoginName == userLoginModel.User && x.InternalPassword == userLoginModel.Password);
+            if (result == null)
+            {
+                return false;
+            }
+            return true;            
         }
-  
     }
 }
