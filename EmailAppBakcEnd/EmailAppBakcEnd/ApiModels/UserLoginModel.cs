@@ -1,4 +1,4 @@
-namespace EmailAppBakcEnd.Controllers
+namespace EmailAppBakcEnd.ApiModels
 {
     public class UserLoginModel
     {

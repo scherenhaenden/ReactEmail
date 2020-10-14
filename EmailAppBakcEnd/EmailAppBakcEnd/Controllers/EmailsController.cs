@@ -1,13 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataApi.Core.Configuration;
-using DataApi.Core.Domain;
 using EmailAppBakcEnd.ApiModels;
-using EmailAppBakcEnd.Features.Mails;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 
 namespace EmailAppBakcEnd.Controllers
